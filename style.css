@@ -257,3 +257,56 @@
     background-color: #fc9d9d;
     color: #a10000;
   }
+
+  .message {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    text-align: center;
+    color: #ff3333;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    display: none;
+    z-index: 10;  /* Asegurarse de que el mensaje esté por encima de otros elementos */
+}
+
+.message p {
+    margin: 0;
+    padding: 0;
+}
+
+.respuesta {
+    margin-top: 10px;
+    z-index: 20;  /* Asegurarse de que la respuesta esté por encima de otros elementos */
+}
+
+.respuesta button {
+    font-weight: 800;
+    font-style: normal;
+    transition: all 0.1s linear;
+    -webkit-appearance: none;
+    background-color: transparent;
+    border: solid 2px #ff5757;
+    border-radius: 4px;
+    color: #ff5757;
+    display: inline-block;
+    font-size: 10px;
+    text-transform: uppercase;
+    margin: 2px;
+    padding: 5px;
+    line-height: 1em;
+    text-decoration: none;
+    min-width: 70px;
+    cursor: pointer;
+    z-index: 21;  /* Asegurarse de que los botones estén por encima de otros elementos */
+}
+
+.respuesta button:hover {
+    background-color: #fc9d9d;
+    color: #a10000;
+}
+
+.front {
+    pointer-events: none;  /* Asegurarse de que la solapa del sobre no bloquee la interacción */
+}
