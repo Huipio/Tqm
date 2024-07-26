@@ -1,6 +1,7 @@
 $(document).ready(function() {
     var envelope = $('#envelope');
     var btn_open = $("#open");
+    var btn_reset = $("#reset");
     var message = $(".message");
     var btn_si = $("#si");
     var btn_no = $("#no");
@@ -13,12 +14,17 @@ $(document).ready(function() {
         open();
     });
 
+    btn_reset.click(function() {
+        close();
+    });
+
     btn_si.click(function() {
         Fiesta();
     });
 
-    btn_no.mouseover(function() {
-        moveNoButton();
+    btn_no.click(function() {
+        btn_no.text('Sí');
+        Fiesta();
     });
 
     function open() {
@@ -34,31 +40,11 @@ $(document).ready(function() {
     }
 
     function Fiesta() {
-        var videoID = "6q8jm0Lu7GU";  // Reemplaza esto con el ID de tu video
+        var videoID = "tSSfRjzYkxo";  // Reemplaza esto con el ID de tu video
         $(".envlope-wrapper, .reset").fadeOut(function() {
             $("#video-container").fadeIn();
             $("#youtube-video").attr("src", "https://www.youtube.com/embed/" + videoID + "?autoplay=1");
             enterFullScreen(document.getElementById("video-container"));
-        });
-    }
-
-    function moveNoButton() {
-        var container = $(".respuesta");
-        var containerWidth = container.width();
-        var containerHeight = container.height();
-        var btnWidth = btn_no.width();
-        var btnHeight = btn_no.height();
-
-        var maxLeft = containerWidth - btnWidth;
-        var maxTop = containerHeight - btnHeight;
-
-        var randomLeft = Math.random() * maxLeft;
-        var randomTop = Math.random() * maxTop;
-
-        btn_no.css({
-            position: 'absolute',
-            left: randomLeft + 'px',
-            top: randomTop + 'px'
         });
     }
 
